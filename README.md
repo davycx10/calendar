@@ -383,7 +383,9 @@ Example:
 
 cd c
 make
-./calendar
+./calendar or use 
+cd src/
+gcc -Wall -Wextra main.c -o program && ./program
 
 C++
 
