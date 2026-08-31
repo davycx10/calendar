@@ -421,7 +421,7 @@ Example:
 
 cd python
 python3 -m calendar or use
-uv run calendar
+uv run python src/calendar/main.py
 
 
 The Python commands will be updated as the implementation and packaging setup are finalized.

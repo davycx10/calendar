@@ -1,0 +1,16 @@
+[project]
+name = "calendar"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "davycx", email = "davycx.com" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+calendar = "calendar.main:main"
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"
