@@ -50,7 +50,7 @@ void display_calendar(int year, int month, int start_day, int num_days)
         printf("\n");
         if (i == 0)
         {
-            printf("-------------------------------\n");
+            printf("-------------------------------------\n");
         }
         
     }
@@ -59,6 +59,6 @@ void display_calendar(int year, int month, int start_day, int num_days)
 
 int main()
 {
-    display_calendar(2024, 6, 5, 31); // Example: Display calendar for June 2024 starting on Friday (5) with 30 days
+    display_calendar(2024, 6, 5, 30); // Example: Display calendar for June 2024 starting on Friday (5) with 30 days
     return 0;
 }
