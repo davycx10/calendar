@@ -93,7 +93,7 @@ int input_year()
             break;
 
         }
-        printf("Invalid input, please enter a valid input or get out of the program bitch \n");
+        printf("Invalid year, please enter a valid value \n");
 
     }
     return year;
@@ -110,7 +110,7 @@ int input_month()
         {
             break;
         }
-        printf("Invalid month. Please enter a valid value or get off your ass in this program bitch.\n");
+        printf("Invalid month. Please enter a valid value.\n");
     }
     return month;   
 }
