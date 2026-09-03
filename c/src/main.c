@@ -1,5 +1,29 @@
 #include <stdio.h>
 
+int get_start_day(int year, int month)
+{
+    if (month < 3)
+    {
+        month += 12;
+        year--;
+    }
+    int k = year % 100;
+    int j = year / 100;
+    int start_day = (1 +(12 * (month + 1)/5 + k +(k/4) +j/4+5 +j ) % 7);
+    return (start_day + 5) % 7; // Adjusting to make Monday = 0, Sunday = 6
+    
+}
+
+int get_num_days(int year, int month)
+{
+    int days_in_month[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    if (month == 2 && (year % 4 == 0 && year % 100 != 0 || year % 400 == 0))
+    {
+        return 29;
+    }
+    return days_in_month[month - 1];
+}
+
 
 void fill_calendar(char *cal[7][7], char buffers[31][3],   int start_day, int num_days)
 {
@@ -57,8 +81,47 @@ void display_calendar(int year, int month, int start_day, int num_days)
     
 }
 
+int input_year()
+{
+    int year;
+    while (1)
+    {
+        printf("Enter year: ");
+        scanf("%d", &year);
+        if (year > 0 && year < 10000)
+        {
+            break;
+
+        }
+        printf("Invalid year, please enter a valid value \n");
+
+    }
+    return year;
+}
+
+int input_month()
+{
+    int month;
+    while (1)
+    {
+        printf("Enter month ");
+        scanf("%d", &month);
+        if (month >= 1 && month <= 12)
+        {
+            break;
+        }
+        printf("Invalid month. Please enter a valid value.\n");
+    }
+    return month;   
+}
+
 int main()
 {
-    display_calendar(2024, 6, 5, 30); // Example: Display calendar for June 2024 starting on Friday (5) with 30 days
+    int year = input_year(); // Function to get user input for year
+    int month = input_month(); // Function to get user input for month
+    int start_day = get_start_day(year, month);
+    int num_days = get_num_days(year, month);
+    
+    display_calendar(year, month, start_day, num_days);
     return 0;
 }
