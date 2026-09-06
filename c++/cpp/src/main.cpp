@@ -17,6 +17,20 @@ int input_year(){
     return year;
 }
 
+int input_month(){
+    int month;
+    while (true){
+        std::cout << "Enter month:  " << std::endl;
+        std::cin >> month;
+        if (month >= 1 && month <= 12)
+        {
+            break;
+        }
+        std::cout << "Invalid month, please enter a valid value" << std::endl;
+    }
+    return month;
+}
+
 int get_start_day(int month, int year){
     if (month <= 2)
     {
@@ -40,11 +54,14 @@ int get_number_days(int month, int year){
 }
 
 
+
+
 int main(int argc, char const *argv[])
 {
     int year = input_year();
-    
-    int start_day = get_start_day(9, year);
+    int month = input_month();
+    int days = get_number_days(month, year);
+    int start_day = get_start_day(month, year);
     std::cout << "Start day: " << start_day << std::endl;
     return 0;
 }
