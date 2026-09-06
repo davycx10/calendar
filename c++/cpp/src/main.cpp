@@ -54,6 +54,33 @@ int get_number_days(int month, int year){
 }
 
 
+void fill_calendar(int year, int month, int start_day, int num_days, std::array<std::array<std::string, 7>, 6> cal){
+    int day = 1;
+    for (int row = 1; row < 7; row++)
+    {
+        for (int col = 0; col < 7; col++)
+        {
+            if (row == 1 && col < start_day)
+            {
+                std::array<std::array<std::string, 7>, 6> cal = ;
+
+                /* code */
+            }
+            
+            /* code */
+        }
+        
+    }
+    
+}
+
+void display_calendar(int year, int month, int start_day, int num_days){
+    std::array<std::array<std::string, 31>, 3> buffers;
+    std::array<std::string, 7> days_week = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
+    std::array<std::array<std::string, 7>, 6> cal;
+
+
+}
 
 
 int main(int argc, char const *argv[])
